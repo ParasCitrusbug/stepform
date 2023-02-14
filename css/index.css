@@ -1,0 +1,77 @@
+.container{
+    width: 25%;
+    padding-left: 10%;
+    height: 500px;
+    background-color: aliceblue;
+    margin: 10%;
+    margin-left: 40%;
+    border-radius: 10px;
+    box-shadow: 10px;
+    margin-bottom: 50px;
+    
+    
+}
+
+.container1{
+    padding: 1%;
+    
+    
+   
+}
+#myform input{
+    margin: 10px;
+    width: 250px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    margin-top: -41px;
+    
+}
+#myform select{
+    margin: 10px;
+    width: 250px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    
+
+}
+
+.step{
+    display: flex;
+    flex-flow: column;
+}
+.table{
+   
+    margin: 20px;
+    padding: 30px;
+    margin-left: 34%;
+    
+}
+.trbat{
+    border: 2px solid red;
+    width: 250px;
+
+}
+#myform lebal{
+    margin-left: -157px;
+    font-size: 20px;
+    position: relative;
+    padding: 10px;
+
+}
+#demo{
+        margin: 38px;
+        color: red;
+}
+table, th , td{
+    border: 2px solid black;
+    
+}
+.trbat th{
+    width: 100px;
+}
+#tbody td{
+    text-align: center;
+}
