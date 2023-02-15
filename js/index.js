@@ -1,93 +1,79 @@
-d= document.getElementsByTagName("input")
-t = 0
-for (i =0; i<d.length;i++){
-    if (d[i].name==''){
-        continue
-    }else{
-        t++
-    }
+var get_input_teg = document.getElementsByTagName("input");
+var thead_tr = document.querySelector(".thead_tr");
+
+for (const iterator of get_input_teg) {
+	var thead_th = document.createElement("th")
+	thead_th.innerText = iterator.name
+	thead_tr.appendChild(thead_th)
 }
 
-var y = new Array();
-for(j=0;j<t;j++){
-    y.push(d[j].name)
-    document.querySelector(".trbat").innerHTML += `<th>${d[j].name}</th>`
-}
+var gender_select = document.getElementById("gender");
+var gender_th = `<th>${gender_select.name}</th>`;
+var particular_index = thead_tr.length;
+thead_tr.innerHTML += gender_th;
+
+var submit_button = document.getElementById("submit_button");
+submit_button.addEventListener("click", data);
+
+var error_teg = document.getElementById("errer_show");
 
 function data() {
 	var back = true;
-	var x = new Array();
-    for(k=0;k<t;k++){
-        x.push(d[k].value)
-    }
-    
-    
+	var input_tag_array = new Array();
+	for (k = 0; k < get_input_teg.length; k++) {
+		input_tag_array.push(get_input_teg[k].value);
+	}
 
-	if (
-		x[0] == "" ||
-		x[1] == "" ||
-		x[2] == "" ||
-		x[4] == "" ||
-		x[5] == "" ||
-		x[6] == ""
-	) {
-		document.getElementById("demo").innerText = "all field is requreid";
-		back = false;
+	var gender_value = gender_select.value;
+	input_tag_array.push(gender_value);
 
-		return back;
-	} else {
-		document.getElementById("demo").innerText = "";
-		back = true;
+	input_tag_array.forEach((e) => {
+		console.log(e);
+	});
+
+	for (const iterator of input_tag_array) {
+		if (iterator == "") {
+			error_teg.innerText = "all field is requreid";
+			back = false;
+			return back;
+		} else {
+			error_teg.innerText = "";
+		}
 	}
 
 	if ((back = true)) {
 		let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
-		let s = x[2];
-		if (regex.test(s)) {
-			document.getElementById("demo").innerText = "";
-
-			back = true;
+		let email_check = input_tag_array[2];
+		if (regex.test(email_check)) {
+			error_teg.innerText = "";
 		} else {
-			document.getElementById("demo").innerText += "email is in unvalid";
+			error_teg.innerText += "email is in unvalid";
 			back = false;
 			return back;
 		}
-	} else {
-		back = false;
-		return back;
-	}
-
-	if (back = true) {
-		if (x[4] == x[5]) {
-			document.getElementById("demo").innerText = "";
-
-			back = true;
-		} else {
-			document.getElementById("demo").innerText += `password in not match`;
-			back = false;
-			return back;
-		}
-	} else {
-		back = false;
-		return back;
 	}
 
 	if ((back = true)) {
-		var l = document.createElement("tr");
-
-		for (i = 0; i < x.length; i++) {
-			l.innerHTML += `<td>${x[i]}</td>`;
+		if (input_tag_array[4] == input_tag_array[5]) {
+			error_teg.innerText = "";
+		} else {
+			error_teg.innerText += `password in not match`;
+			back = false;
+			return back;
 		}
-		console.log(l);
-
-		var a = document.getElementById("tbody");
-		a.appendChild(l);
-	} else {
-		back = false;
-		return back;
 	}
 
-	console.log(x);
-	console.log(y);
+	if ((back = true)) {
+		var tbody_tr = document.createElement("tr");
+		
+		for (const iterator of input_tag_array) {
+			var tbody_tr_td = document.createElement("td")
+			tbody_tr_td.innerText = iterator;
+			tbody_tr.appendChild(tbody_tr_td)
+		}
+		var tbody_element = document.getElementById("tbody");
+		tbody_element.appendChild(tbody_tr);
+	}
+
 	return back;
 }

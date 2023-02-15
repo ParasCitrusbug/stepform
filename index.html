@@ -1,109 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script
-			src="https://code.jquery.com/jquery-3.6.3.min.js"
-			integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="css/index.css" />
-		<title>step form</title>
-	</head>
-	<body>
-		<div class="container">
-			<form id="myform">
-				<div class="container1">
-					<div class="step">
-                        <lebal>frist name:</lebal>
-						<input
-							type="text"
-							placeholder="fristname"
-							id="fname"
-							name="fristname"
-							required
-						/>
-                        <lebal>last name:</lebal>
-						<input
-							type="text"
-							placeholder="lastname"
-							id="lname"
-							name="lastname"
-							required
-						/>
-                        <lebal>email:</lebal>
-						<input
-							type="email"
-							class="email"
-							placeholder="email"
-							id="email"
-							name="email"
-							required
-						/>
-					</div>
-					<div class="step">
-                        <lebal>date of birth:</lebal>
-						<input
-							type="date"
-							placeholder="Date of brith"
-							id="dob"
-							name="Dob"
-							required
-						/>
-                        <lebal>gender:</lebal>
-						<select name="gender" id="gender" required>
-							gender
-							<option value="male">male</option>
-							<option value="female">female</option>
-						</select>
-					</div>
-					<div class="step">
-                        <lebal>pasword:</lebal>
-						<input
-							type="password"
-							name="password"
-							placeholder="password"
-							id="psd"
-							required
-						/>
-                        <lebal>comfirm password:</lebal>
-						<input
-							type="password"
-							placeholder="comfirm password"
-							name="comfirm password"
-							id="cpsd"
-							required
-						/>
-                        <lebal>dfhdhf</lebal>
-						<input
-							type="button"
-							placeholder="cancel"
-							id="cancel"
-							value="cancel"
-						/>
-                        <lebal>dfdf</lebal>
-						<input
-							type="button"
-							placeholder="submit"
-							id="submit"
-							onclick="data()"
-							value="submit"
-						/>
-					</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/index.css" />
+	<title>step form</title>
+</head>
+
+<body>
+	<div class="container">
+		<form id="myform">
+			<div class="container1">
+				<div class="form_step">
+					<lebal>frist name:</lebal>
+					<input type="text" placeholder="fristname" id="fristname" name="fristname" required />
+					<lebal>last name:</lebal>
+					<input type="text" placeholder="lastname" id="lastname" name="lastname" required />
+					<lebal>email:</lebal>
+					<input type="email" class="email" placeholder="email" id="email" name="email" required />
 				</div>
-			</form>
-			<p id="demo"></p>
-		</div>
-		<div>
-			<table class="table">
-				<thead>
-					<tr class="trbat"></tr>
-				</thead>
-				<tbody id="tbody" class="row"></tbody>
-			</table>
-		</div>
-		<script src="js/index.js"></script>
-	</body>
+				<div class="form_step">
+					<lebal>date of birth:</lebal>
+					<input type="date" placeholder="Date of brith" id="date_of_brith" name="date_of_brith" required />
+					<lebal>gender:</lebal>
+					<select name="gender" id="gender" required>
+						gender
+						<option value="male">male</option>
+						<option value="female">female</option>
+					</select>
+				</div>
+				<div class="form_step">
+					<lebal>pasword:</lebal>
+					<input type="password" name="password" placeholder="password" id="password" required />
+					<lebal>comfirm password:</lebal>
+					<input type="password" placeholder="comfirm password" name="comfirm password" id="comfirm_password"
+						required />
+
+					<button type="reset" placeholder="cancel" id="cancel_button" value="cancel">
+						cancel
+					</button>
+
+					<button type="button" placeholder="submit" id="submit_button" value="submit">
+						submit
+					</button>
+				</div>
+			</div>
+		</form>
+		<p id="errer_show"></p>
+	</div>
+	<div>
+		<table class="table">
+			<thead>
+				<tr class="thead_tr"></tr>
+			</thead>
+			<tbody id="tbody" class="tbody"></tbody>
+		</table>
+	</div>
+	<script src="js/index.js"></script>
+</body>
+
 </html>
